@@ -2,6 +2,7 @@ from django.conf.urls import include, url
 from django.conf import settings
 from django.contrib import admin
 
+from bakerydemo.country import urls as country_urls
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
 from wagtail.contrib.sitemaps.views import sitemap
@@ -12,6 +13,7 @@ from .api import api_router
 
 urlpatterns = [
     url(r'^django-admin/', admin.site.urls),
+    url(r'^country/', include(country_urls)),
 
     url(r'^admin/', include(wagtailadmin_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),

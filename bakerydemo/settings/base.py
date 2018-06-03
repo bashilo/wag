@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'bakerydemo.breads',
     'bakerydemo.locations',
     'bakerydemo.search',
+    'bakerydemo.country',
 
     'wagtail.contrib.search_promotions',
     'wagtail.contrib.forms',
@@ -57,7 +58,8 @@ INSTALLED_APPS = [
     'modelcluster',
     'taggit',
     'wagtailfontawesome',
-
+'dal',
+'dal_select2',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
