@@ -8,6 +8,7 @@ import django_cache_url
 from .base import *
 
 DEBUG = os.getenv('DJANGO_DEBUG', 'off') == 'on'
+
 print (DEBUG)
 for env in os.environ:
     print (env)
@@ -35,7 +36,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # BASE_URL required for notification emails
 BASE_URL = 'http://localhost:8000'
 
-db_from_env = dj_database_url.config(conn_max_age=500)
+db_from_env = dj_database_url.config("postgres://USER:PASSWORD@HOST:PORT/NAME", conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 print (DATABASES['default'])
 
