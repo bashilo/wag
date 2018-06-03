@@ -9,9 +9,7 @@ from .base import *
 
 DEBUG = os.getenv('DJANGO_DEBUG', 'off') == 'on'
 
-print (DEBUG)
-for env in os.environ:
-    print (env)
+
 # DJANGO_SECRET_KEY *should* be specified in the environment. If it's not, generate an ephemeral key.
 if 'DJANGO_SECRET_KEY' in os.environ:
     SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
@@ -38,7 +36,6 @@ BASE_URL = 'http://localhost:8000'
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
-print (DATABASES['default'])
 
 # AWS creds may be used for S3 and/or Elasticsearch
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID', '')
