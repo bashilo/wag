@@ -8,7 +8,9 @@ import django_cache_url
 from .base import *
 
 DEBUG = os.getenv('DJANGO_DEBUG', 'off') == 'on'
-print DEBUG
+print (DEBUG)
+for env in os.environ:
+    print (env)
 # DJANGO_SECRET_KEY *should* be specified in the environment. If it's not, generate an ephemeral key.
 if 'DJANGO_SECRET_KEY' in os.environ:
     SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
